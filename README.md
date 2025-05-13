@@ -1,29 +1,33 @@
-# Create T3 App
+# Gerenciador de Tarefas App
+## Para Rodar
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+### Instalar as dependências
+`pnpm install`
 
-## What's next? How do I make an app with this?
+### Rodar o projeto localmente
+`pnpm dev`
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+dependencies:
+```
+@t3-oss/env-nextjs 0.12.0     @trpc/server 11.1.2           server-only 0.0.1             
+@tanstack/react-query 5.76.0  next 15.3.2                   superjson 2.2.2               
+@trpc/client 11.1.2           react 19.1.0                  zod 3.24.4                    
+@trpc/react-query 11.1.2      react-dom 19.1.0   
+```
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- Next.js:
+Framework para React focado em renderização do lado do servidor (SSR) e geração de sites estáticos (SSG).
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- Tailwind CSS:
+Framework de CSS utilitário para estilização.
 
-## Learn More
+- tRPC:
+Framework para criar APIs typesafe em TypeScript.
+## Componentes
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+Foram criados dois componentes principais na aplicação, EditTask e ListingTask.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+- ListingTask: Componente que lista todas as tarefas criadas, com as funcionalidades de remoção e edição.
+- EditTask: Componente responsável por poder editar ou criar novas tarefas, além das funcionalidades de notificações em caso de sucesso/erro.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
-
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+No arquivo src/server/api/routers/post.ts foram definidas todas as opeerações CRUD utilizando o tRPC para expor os endpoints que manipulam a lista de tarefas em memória. Foi feita a validação dos campos utilizando o Zod.
