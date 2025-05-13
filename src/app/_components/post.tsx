@@ -5,7 +5,7 @@ import type { Task } from "~/server/api/routers/post";
 
 import { api } from "~/trpc/react";
 
-export function EditPost({ task }: { task: Task | null }) {
+export function EditTask({ task }: { task: Task | null }) {
   const utils = api.useUtils();
   const [formData, setFormData] = useState({
     name: task?.titulo || "",

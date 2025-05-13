@@ -2,7 +2,7 @@
 
 import type { Task } from "../../server/api/routers/post";
 import { api } from "~/trpc/react";
-import { EditPost } from "./post";
+import { EditTask } from "./post";
 import { useState } from "react";
 
 export function ListingTasks() {
@@ -42,7 +42,7 @@ export function ListingTasks() {
                             </div>
                                 {editingTaskId == task.id && (
                                     <div className="mt-4 w-full">
-                                        <EditPost task={task}/>
+                                        <EditTask task={task}/>
                                     </div>
                                 )}
                         </div>

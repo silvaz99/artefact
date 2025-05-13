@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { EditPost } from "~/app/_components/post";
+import { EditTask } from "~/app/_components/post";
 import { api, HydrateClient } from "~/trpc/server";
 import { ListingTasks } from "./_components/listing";
 
@@ -16,7 +16,7 @@ export default async function Home() {
           </h1>
 
           <div className="flex gap-8 container items-center justify-center">
-            <EditPost task={null} />
+            <EditTask task={null} />
             <ListingTasks />
           </div>
         </div>
